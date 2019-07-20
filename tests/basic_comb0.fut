@@ -1,7 +1,7 @@
 import "../prims"
 import "../combinators"
 
-let v: validator = range_match "az" |> validator
+let v: validator = range_match "az" |> validatehl
 
 -- Basic range_match test
 -------------------------

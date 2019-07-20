@@ -17,7 +17,7 @@ let validate (pd: mbpd): bool =
   case #Nothing -> false
   case #Just _  -> true
 
-let validator (m: matcher): validator = m >-> validate
+let validatehl (m: matcher): validator = m >-> validate
 
 let or_e (f: matcher) (g: matcher) (pd: mbpd): mbpd =
   match f pd
