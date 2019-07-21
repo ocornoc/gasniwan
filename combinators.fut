@@ -32,7 +32,7 @@ let seq_e (f: matcher) (g: matcher) (pd: mbpd): mbpd =
 let char_match (c: char) (pd: mbpd): mbpd =
   match pd
   case #Nothing -> #Nothing
-  case #Just x -> if or [x.pos >= x.len - 1, x.data[x.pos] != c] then
+  case #Just x -> if or [x.pos >= x.len, x.data[x.pos] != c] then
                     #Nothing
                   else
                     #Just (x with pos = x.pos + 1)
