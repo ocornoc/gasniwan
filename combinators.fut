@@ -22,12 +22,12 @@ let validatehl (m: matcher): validator = m >-> validate
 let or_e (f: matcher) (g: matcher) (pd: mbpd): mbpd =
   match f pd
   case #Nothing -> g pd
-  case #Just x  -> #Just x
+  case x        -> x
 
 let seq_e (f: matcher) (g: matcher) (pd: mbpd): mbpd =
   match f pd
   case #Nothing -> #Nothing
-  case #Just x  -> g (#Just x)
+  case x        -> g x
 
 let char_match (c: char) (pd: mbpd): mbpd =
   match pd
