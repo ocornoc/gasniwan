@@ -35,7 +35,7 @@ let char_match (c: char) (pd: mbpd): mbpd =
   case #Just x -> if or [x.pos >= x.len - 1, x.data[x.pos] != c] then
                     #Nothing
                   else
-                     #Just (x with pos = x.pos + 1)
+                    #Just (x with pos = x.pos + 1)
 
 let set_match [n] (set: [n]char) (pd: mbpd): mbpd =
   if n == 0 then pd else match pd
