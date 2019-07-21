@@ -1,5 +1,5 @@
-import "../prims"
-import "../combinators"
+import "../../prims"
+import "../../combinators"
 
 let v: validator = range_match "az" |> validatehl
 
