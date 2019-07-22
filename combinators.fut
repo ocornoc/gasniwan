@@ -7,7 +7,7 @@ type validator = mbpd -> bool
 let end_match (pd: mbpd): mbpd =
   match pd
   case #Nothing -> #Nothing
-  case #Just x  -> if x.pos == x.len - 1 then
+  case #Just x  -> if x.pos == x.len then
                      #Just x
                    else
                      #Nothing
