@@ -40,7 +40,7 @@ let char_match (c: char) (pd: mbpd): mbpd =
 let set_match [n] (set: [n]char) (pd: mbpd): mbpd =
   if n == 0 then pd else match pd
   case #Nothing -> #Nothing
-  case #Just _  -> let pds: [n]mbpd = map (\c -> char_match c pd) set in
+  case _        -> let pds: [n]mbpd = map (\c -> char_match c pd) set in
                    let matches: []mbpd = filter validate pds in
                    if null matches then #Nothing else head matches
 
