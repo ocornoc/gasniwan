@@ -51,6 +51,6 @@ local let mkrange (r: [2]char): []char =
 let range_match (r: [2]char): matcher =
   set_match (mkrange r)
 
-let ranges_match [n] (r: [n][2]char): matcher =
+let ranges_match (r: [][2]char): matcher =
   let ranges: []char = flatten (map mkrange r) in
   set_match ranges
