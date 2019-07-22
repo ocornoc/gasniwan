@@ -4,7 +4,7 @@ local type mbpd = Maybe parse_data
 type matcher = mbpd -> mbpd
 type validator = mbpd -> bool
 
-let empty_e (pd: mbpd): mbpd =
+let end_match (pd: mbpd): mbpd =
   match pd
   case #Nothing -> #Nothing
   case #Just x  -> if x.pos == x.len - 1 then
